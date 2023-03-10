@@ -1,0 +1,19 @@
+.input {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.searchIcon {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+
+  path {
+    fill: rgba(0, 0, 0, 0.1);
+  }
+}

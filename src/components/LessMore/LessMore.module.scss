@@ -1,0 +1,40 @@
+.lessMore {
+  background: #f2ede7;
+  border-radius: 8px;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  width: 30px;
+  height: 100%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: var(--accent-color);
+    color: #fff;
+  }
+}
+
+.controlLeft {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.controlRight {
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}

@@ -1,0 +1,30 @@
+.filterItem {
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 1px;
+    background: #d1cbcb;
+  }
+
+  &.active {
+    background: var(--accent-color);
+    color: #fff;
+    border-radius: 50px;
+
+    &::after {
+      display: none;
+    }
+  }
+}

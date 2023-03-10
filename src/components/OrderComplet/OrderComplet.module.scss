@@ -1,0 +1,56 @@
+.orderComplet {
+  background: #fff;
+  padding: 20px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+}
+
+.top {
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgb(216, 208, 208);
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.aboutList {
+  padding-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aboutItem {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  span {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.totalCount {
+  font-weight: 600;
+}

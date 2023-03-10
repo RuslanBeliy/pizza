@@ -1,0 +1,46 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+.left {
+  width: 100%;
+}
+
+.leftTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.goodsCount {
+  font-weight: 600;
+  font-size: 20px;
+}
+.clearCart {
+  font-size: 14px;
+  color: #a3a3a3;
+  cursor: pointer;
+  border-bottom: 1px dotted #a3a3a3;
+}
+
+.right {
+  max-width: 450px;
+  width: 100%;
+  margin-top: 54px;
+
+  @media (max-width: 1200px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 100%;
+  }
+}
