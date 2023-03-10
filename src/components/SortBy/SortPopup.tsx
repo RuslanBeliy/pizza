@@ -8,14 +8,15 @@ import { SortIcons } from './SortIcons';
 import { sortList } from '../../constants';
 import { useAppSelector, useAppDispatch } from '../../hooks';
 import { SortBy } from '../../models/SortBy';
-import { filterActions } from '../../store/slices/filterSlice';
+import { filterActions } from '../../store/slices/filter/filterSlice';
+import { activeSortSelector } from '../../store/slices/filter/selectors';
 
 interface Props {
   setIsShow: Dispatch<SetStateAction<boolean>>;
 }
 
 export const SortPopup: FC<Props> = ({ setIsShow }) => {
-  const { activeSort } = useAppSelector((state) => state.filter);
+  const activeSort = useAppSelector(activeSortSelector);
   const dispatch = useAppDispatch();
   const popupRef = useRef<HTMLDivElement>(null);
 

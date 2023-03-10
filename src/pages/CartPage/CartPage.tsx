@@ -4,11 +4,12 @@ import s from './CartPage.module.scss';
 
 import { Container, EmptyCart, FullCart, Title } from '../../components';
 import { useAppSelector } from '../../hooks';
+import { countPizzasSelector } from '../../store/slices/cart/selectors';
 
 interface Props {}
 
 export const CartPage: FC<Props> = () => {
-  const countPizzas = useAppSelector((state) => state.cart.countPizzas);
+  const countPizzas = useAppSelector(countPizzasSelector);
 
   useEffect(() => {
     window.scrollTo(0, 0);

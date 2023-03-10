@@ -7,15 +7,17 @@ import s from './PizzaList.module.scss';
 
 import { Skeleton, Title } from '..';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { filterActions } from '../../store/slices/filterSlice';
-import { getPizzas } from '../../store/slices/pizzasSlice';
+import { filterActions } from '../../store/slices/filter/filterSlice';
+import { filterSelector } from '../../store/slices/filter/selectors';
+import { getPizzas } from '../../store/slices/pizzas/pizzasSlice';
+import { pizzasSelector } from '../../store/slices/pizzas/selectors';
 import { PizzaCard } from '../PizzaCard';
 
 interface Props {}
 
 export const PizzaList: FC<Props> = () => {
-  const { pizzas, status } = useAppSelector((state) => state.pizzas);
-  const { activeCategory, activeSort, searchString } = useAppSelector((state) => state.filter);
+  const { pizzas, status } = useAppSelector(pizzasSelector);
+  const { activeCategory, activeSort, searchString } = useAppSelector(filterSelector);
   const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const isExistQueryString = useRef(false);

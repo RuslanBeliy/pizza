@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { axios } from '../../api';
+import { axios } from '../../../api';
 
-import { Pizza } from '../../models/Pizza';
+import { Pizza } from '../../../models/Pizza';
 
 interface Params {
   category?: string | null;

@@ -7,7 +7,7 @@ import s from './SearchInput.module.scss';
 import { Input } from '..';
 import { useAppDispatch, useDebounce } from '../../hooks';
 import { routes } from '../../router/routes';
-import { filterActions } from '../../store/slices/filterSlice';
+import { filterActions } from '../../store/slices/filter/filterSlice';
 
 interface Props {}
 

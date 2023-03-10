@@ -1,3 +1,5 @@
+import { CartPizza } from '../models/Pizza';
+
 export const declinationWord = (num: number, words: string[]) => {
   num = num % 10;
   if (num > 10 && num < 20) return words[2];
@@ -6,12 +8,18 @@ export const declinationWord = (num: number, words: string[]) => {
   return words[2];
 };
 
-export const setLocalStorage = (name: string, item: any) => {
-  window.localStorage.setItem(name, JSON.stringify(item));
+export const setCartToLS = (pizzas: CartPizza[]) => {
+  localStorage.setItem('pizzas', JSON.stringify(pizzas));
 };
 
-export const getLocalStorage = (name: string) => {
-  const data = window.localStorage.getItem(name);
-  if (!data) return [];
-  return JSON.parse(data);
+export const getCartFromLS = () => {
+  const data = localStorage.getItem('pizzas');
+  const pizzas = data ? (JSON.parse(data) as CartPizza[]) : [];
+  const totalPrice = pizzas.reduce((acc, pizza) => (acc += pizza.price * pizza.count), 0);
+  const totalCount = pizzas.reduce((acc, pizza) => (acc += pizza.count), 0);
+  return {
+    pizzas,
+    totalPrice,
+    totalCount,
+  };
 };

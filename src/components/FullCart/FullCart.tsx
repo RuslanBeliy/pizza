@@ -4,13 +4,14 @@ import s from './FullCart.module.scss';
 
 import { CartList, OrderComplet } from '..';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { cartActions } from '../../store/slices/cartSlice';
+import { cartActions } from '../../store/slices/cart/cartSlice';
+import { countPizzasSelector } from '../../store/slices/cart/selectors';
 import { declinationWord } from '../../utils';
 
 interface Props {}
 
 export const FullCart: FC<Props> = () => {
-  const countPizzas = useAppSelector((state) => state.cart.countPizzas);
+  const countPizzas = useAppSelector(countPizzasSelector);
   const correctWord = declinationWord(countPizzas, ['товар', 'товара', 'товаров']);
   const dispatch = useAppDispatch();
   const clearCart = () => {

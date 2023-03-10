@@ -7,12 +7,13 @@ import s from './PizzaCard.module.scss';
 import { Button } from '..';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { CartPizza } from '../../models/Pizza';
-import { cartActions } from '../../store/slices/cartSlice';
+import { cartActions } from '../../store/slices/cart/cartSlice';
+import { findPizzaByIdSelector } from '../../store/slices/cart/selectors';
 
 interface Props extends CartPizza {}
 
 export const AddToCart: FC<Props> = ({ id, imageUrl, price, size, title, type, count }) => {
-  const findPizza = useAppSelector((state) => state.cart.pizzas.find((pizza) => pizza.id === id));
+  const findPizza = useAppSelector(findPizzaByIdSelector(id));
   const dispatch = useAppDispatch();
 
   const handleClick = () => {

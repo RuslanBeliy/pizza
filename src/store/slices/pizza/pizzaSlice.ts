@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { axios } from '../../api';
-import { Pizza } from '../../models/Pizza';
+import { axios } from '../../../api';
+import { Pizza } from '../../../models/Pizza';
 
 export const getOnePizza = createAsyncThunk('pizza/getOnePizza', async (id: string) => {
   const { data } = await axios.get<Pizza>(`/pizzas/${id}`);

@@ -7,7 +7,8 @@ import s from './PizzaPage.module.scss';
 import { Button, Container, FullPizzaCard, Spinner, Title } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { routes } from '../../router/routes';
-import { getOnePizza } from '../../store/slices/pizzaSlice';
+import { getOnePizza } from '../../store/slices/pizza/pizzaSlice';
+import { pizzaSelector } from '../../store/slices/pizza/selectors';
 
 interface Props {}
 
@@ -15,7 +16,7 @@ export const PizzaPage: FC<Props> = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { pizza, status } = useAppSelector((state) => state.pizza);
+  const { pizza, status } = useAppSelector(pizzaSelector);
 
   useEffect(() => {
     if (!id) return;

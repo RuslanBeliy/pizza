@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { sortList } from '../../constants';
+import { sortList } from '../../../constants';
 
-import { SortBy } from '../../models/SortBy';
+import { SortBy } from '../../../models/SortBy';
 
 interface State {
   activeCategory: string | null;

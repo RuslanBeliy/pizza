@@ -9,7 +9,7 @@ import iconCheck from '../../assets/check.png';
 
 import { useAppDispatch } from '../../hooks';
 import { routes } from '../../router/routes';
-import { cartActions } from '../../store/slices/cartSlice';
+import { cartActions } from '../../store/slices/cart/cartSlice';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Title } from '../Title';

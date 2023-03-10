@@ -5,12 +5,13 @@ import s from './Categories.module.scss';
 import { CategoriesItem } from '..';
 import { categories } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { filterActions } from '../../store/slices/filterSlice';
+import { filterActions } from '../../store/slices/filter/filterSlice';
+import { activeCategorySelector } from '../../store/slices/filter/selectors';
 
 interface Props {}
 
 export const Categories: FC<Props> = () => {
-  const activeCategory = useAppSelector((state) => state.filter.activeCategory);
+  const activeCategory = useAppSelector(activeCategorySelector);
   const dispatch = useAppDispatch();
 
   const handleClick = (category: string | null) => {

@@ -8,12 +8,13 @@ import s from './OrderComplet.module.scss';
 import { Button } from '..';
 import { useAppSelector } from '../../hooks';
 import { routes } from '../../router/routes';
+import { cartSelector } from '../../store/slices/cart/selectors';
 import { declinationWord } from '../../utils';
 
 interface Props {}
 
 export const OrderComplet: FC<Props> = () => {
-  const { countPizzas, pizzas, totalPrice } = useAppSelector((state) => state.cart);
+  const { countPizzas, pizzas, totalPrice } = useAppSelector(cartSelector);
   const correctWord = declinationWord(countPizzas, ['товар', 'товара', 'товаров']);
   const navigate = useNavigate();
   return (
@@ -27,7 +28,7 @@ export const OrderComplet: FC<Props> = () => {
       </div>
       <div className={s.aboutList}>
         {pizzas.map((pizza) => (
-          <div key={pizza.id} className={s.aboutItem}>
+          <div key={`${pizza.id}_${pizza.size}_${pizza.type}`} className={s.aboutItem}>
             {pizza.title} {pizza.size} см. {pizza.count !== 1 && `x ${pizza.count} шт.`}{' '}
             <span>
               {pizza.price * pizza.count}

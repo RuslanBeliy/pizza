@@ -9,12 +9,13 @@ import { SortIcons } from './SortIcons';
 import { SortPopup } from './SortPopup';
 
 import { useAppSelector } from '../../hooks';
+import { activeSortSelector } from '../../store/slices/filter/selectors';
 
 interface Props {}
 
 export const SortBy: FC<Props> = () => {
   const [isShow, setIsShow] = useState(false);
-  const activeSort = useAppSelector((state) => state.filter.activeSort);
+  const activeSort = useAppSelector(activeSortSelector);
 
   const handleClick = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
     e.stopPropagation();

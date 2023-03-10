@@ -7,7 +7,7 @@ import s from './CartItem.module.scss';
 
 import { useAppDispatch } from '../../hooks';
 import { CartPizza } from '../../models/Pizza';
-import { cartActions } from '../../store/slices/cartSlice';
+import { cartActions } from '../../store/slices/cart/cartSlice';
 import { LessMore } from '../LessMore';
 import { Title } from '../Title';
 
